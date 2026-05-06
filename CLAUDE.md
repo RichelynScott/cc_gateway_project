@@ -2,6 +2,8 @@
 
 CC Gateway is a reverse proxy that sits between Claude Code and `api.anthropic.com`, normalizing device identity, environment fingerprints, and process telemetry so a single Anthropic account can be used from multiple machines without triggering account bans. It centralizes OAuth token refresh and strips the `x-anthropic-billing-header` (matching `CLAUDE_CODE_ATTRIBUTION_HEADER=false`) for cross-session prompt-cache sharing.
 
+> **Alpha status (v0.2.0).** Test against a non-primary Anthropic account before pointing a primary account through this gateway. New CC telemetry fields may not be covered by the rewriter — see Caveats.
+
 ## Origin & Ownership
 
 This is an **adopted third-party tool** (upstream owner: `motiful`), MIT-licensed. It is integrated into the AIBC platform at the deployment layer only — it is **not** a first-party AIBC component, does not carry AIBC branding, and does not participate in platform-level disciplines (papa-git trailers, FYI.md journals, CPM channels). Treat it like any other vendor tool: keep changes focused on configuration and local fixes; prefer upstream PRs for feature work.
