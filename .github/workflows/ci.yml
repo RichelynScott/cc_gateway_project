@@ -24,8 +24,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
 
+      # Use npm ci for reproducible installs against package-lock.json.
       - name: Install dependencies
-          # Use npm ci for reproducible installs against package-lock.json.
         run: npm ci
 
       - name: TypeScript build
